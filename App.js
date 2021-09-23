@@ -39,7 +39,7 @@ class App  extends React.Component {
   render() { 
     return (
       <div className="container">
-        <Navbar totalCounters={this.state.counters.reduce((a,c)=>a + c.value,0)}/>
+        <Navbar totalCounters={counters.filter((c) => c.value > 0).count()}/>
         <Counters 
             counters={this.state.counters}
             onIncrement={this.handleIncrement}
